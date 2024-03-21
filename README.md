@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @KyTranMoi
+- 👋 Hi, I’m @KyTran
 - 👀 I'm interested in technology and like to explore and use new technologies even though I haven't learned the old ones yet haha.
 - 🌱 Currently, I am a 3rd year student at Ho Chi Minh City University of Industry, majoring in information technology, majoring in data science. I want to be as good as an older brother I know...
 
