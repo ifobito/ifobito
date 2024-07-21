@@ -1,6 +1,11 @@
-- 👋 Hi, I’m @KyTran
-- 👀 I'm interested in technology and like to explore and use new technologies even though I haven't learned the old ones yet haha.
-- 🌱 Currently, I am a 3rd year student at Ho Chi Minh City University of Industry, majoring in information technology, majoring in data science. I want to be as good as an older brother I know...
+# `Hi there, I'm Ky Tran 👋`
+- 🎓 Fourth-year student at Ho Chi Minh City University of Industry.
+- 🖥️ Currently working as a Data Engineer at a software company.
+- 🚀 Quick learner with a keen interest in data science and engineering.
+- 📊 Focused on enhancing my skills and knowledge in data.
+- 🎯 Personal goals:
+  - Achieve an English proficiency score of over 450 in TOEIC.
+  - Maintain a GPA above 3.3
 
 <!---
 KyTranMoi/KyTranMoi is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
