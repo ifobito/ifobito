@@ -7,9 +7,3 @@
   - Achieve an English proficiency score of over 450 in TOEIC.
   - Maintain a GPA above 3.3
 
-<!---
-KyTranMoi/KyTranMoi is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-My CV
-```https://www.overleaf.com/read/rmrjhqdjvwyv#868dcb```
