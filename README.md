@@ -1,4 +1,5 @@
-![Dancing Toothless](https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif)
+![Dancing Toothless](https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif)
+
 
 # `Hi there, I'm Kỳ Trần 👋`
 - 🎓 Fourth-year student at Ho Chi Minh City University of Industry.
