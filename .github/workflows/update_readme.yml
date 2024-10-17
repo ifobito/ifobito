@@ -1,0 +1,40 @@
+name: Update README with Time-Based Image
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Run every 3 hours
+  workflow_dispatch:  # Allows you to manually trigger the workflow
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update README with correct image
+        run: |
+          current_hour=$(TZ="Asia/Ho_Chi_Minh" date +"%H")
+
+          if [ $current_hour -ge 5 ] && [ $current_hour -lt 11 ]; then
+            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
+          elif [ $current_hour -ge 11 ] && [ $current_hour -lt 13 ]; then
+            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/1769af2232477140ee42ce77edd2ff0b.gif"
+          elif [ $current_hour -ge 13 ] && [ $current_hour -lt 18 ]; then
+            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif"
+          else
+            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif" # Night image
+
+          fi
+
+          # Replace the image in README.md
+          sed -i "s|!\[0\](.*)|![0]($image_url)|g" README.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update image based on time of day"
+          git push
