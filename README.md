@@ -1,3 +1,5 @@
+![Dancing Toothless](https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif)
+
 # `Hi there, I'm Kỳ Trần 👋`
 - 🎓 Fourth-year student at Ho Chi Minh City University of Industry.
 - 🖥️ Currently working as a Data Engineer at a software company.
@@ -7,4 +9,3 @@
   - Achieve an English proficiency score of over 450 in TOEIC.
   - Maintain a GPA above 3.3
 
-![image]([https://github.com/user-attachments/assets/7a508b26-deaf-46f9-b755-f4e6a5aefca9?raw=true](https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif))
