@@ -1,4 +1,4 @@
-![0](https://github.com/KyTranDE/KyTranDE/blob/main/1769af2232477140ee42ce77edd2ff0b.gif)
+![0](https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif)
 
 
 # `Hi there, I'm Kỳ Trần 👋`
