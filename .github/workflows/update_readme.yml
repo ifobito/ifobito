@@ -2,7 +2,7 @@ name: Update README with Time-Based Image
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Run every 3 hours
+    - cron: '*/1 * * * *'  # Chạy mỗi 1 phút
   workflow_dispatch:  # Allows you to manually trigger the workflow
 
 jobs:
@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Update README with correct image
         run: |
@@ -30,6 +31,11 @@ jobs:
 
           # Replace the image in README.md
           sed -i "s|!\[0\](.*)|![0]($image_url)|g" README.md
+
+      - name: Debug Info
+        run: |
+          echo "Current Hour: $current_hour"
+          echo "Image URL: $image_url"
 
       - name: Commit and Push Changes
         run: |
