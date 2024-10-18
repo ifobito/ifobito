@@ -44,3 +44,5 @@ jobs:
           git add README.md
           git commit -m "Update image based on time of day"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
