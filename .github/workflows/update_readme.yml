@@ -41,8 +41,15 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Action"
-          git add README.md
-          git commit -m "Update image based on time of day"
-          git push
+          
+          # Kiểm tra nếu có sự thay đổi
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add README.md
+            git commit -m "Update image based on time of day"
+            git push
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
