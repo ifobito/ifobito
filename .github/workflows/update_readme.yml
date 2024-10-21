@@ -1,8 +1,8 @@
-name: Update README with Time-Based Image
+name: Update README with Random GIF
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Chạy mỗi 1 phút
+    - cron: '*/5 * * * *'  # Chạy mỗi 5 phút
   workflow_dispatch:  # Allows you to manually trigger the workflow
 
 jobs:
@@ -14,24 +14,32 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Update README with correct image
+      - name: Update README with Random GIF
         run: |
-          current_hour=$(TZ="Asia/Ho_Chi_Minh" date +"%H")
-          echo "Debug: Current hour is $current_hour"  # Debug
+          # Array of GIF URLs
+          gif_list=(
+            "https://github.com/KyTranDE/KyTranDE/blob/main/0c9d0de4a11b4ebf167f90d1ab2c2237.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/1.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/2.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/3.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/4.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/5.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/6.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/7.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/8.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
+            "https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif"
+          )
 
-          if [ "$current_hour" -ge 5 ] && [ "$current_hour" -lt 11 ]; then
-            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
-          elif [ "$current_hour" -ge 11 ] && [ "$current_hour" -lt 13 ]; then
-            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/1769af2232477140ee42ce77edd2ff0b.gif"
-          elif [ "$current_hour" -ge 13 ] && [ "$current_hour" -lt 18 ]; then
-            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif"
-          else
-            image_url="https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
-          fi
+          # Randomly select a GIF
+          random_index=$(shuf -i 0-$((${#gif_list[@]}-1)) -n 1)
+          image_url=${gif_list[$random_index]}
+
+          echo "Debug: Selected GIF URL is $image_url"  # Debug
 
           # Replace the image in README.md
           sed -i "s|!\[0\](.*)|![0]($image_url)|g" README.md
-
 
       - name: Debug Info
         run: |
