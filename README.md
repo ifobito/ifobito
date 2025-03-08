@@ -1,4 +1,4 @@
-![0](https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif)
+![0](https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif)
 
 
 # `Hi there, I'm Kỳ Trần 👋`
