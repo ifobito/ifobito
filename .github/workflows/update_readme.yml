@@ -1,64 +1,64 @@
-name: Update README with Random GIF
+# name: Update README with Random GIF
 
-on:
-  schedule:
-    - cron: '*/1 * * * *'  # Chạy mỗi 5 phút
-  workflow_dispatch:  # Allows you to manually trigger the workflow
+# on:
+#   schedule:
+#     - cron: '*/1 * * * *'  # Chạy mỗi 5 phút
+#   workflow_dispatch:  # Allows you to manually trigger the workflow
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
+# jobs:
+#   update-readme:
+#     runs-on: ubuntu-latest
 
-    steps:
+#     steps:
     
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+#       - name: Checkout Repository
+#         uses: actions/checkout@v3
 
-      - name: Update README with Random GIF
-        run: |
-          # Array of GIF URLs
-          gif_list=(
-            "https://github.com/KyTranDE/KyTranDE/blob/main/0c9d0de4a11b4ebf167f90d1ab2c2237.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/1.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/2.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/3.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/4.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/5.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/6.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/7.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/8.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
-            "https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif"
-          )
+#       - name: Update README with Random GIF
+#         run: |
+#           # Array of GIF URLs
+#           gif_list=(
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/0c9d0de4a11b4ebf167f90d1ab2c2237.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/1.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/2.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/3.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/4.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/5.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/6.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/7.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/8.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/89bb06251fb7401e094b1f6d71f3d3f4.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/fernando-bordon-asdasd.gif"
+#             "https://github.com/KyTranDE/KyTranDE/blob/main/Toothless-dancing-toothless.gif"
+#           )
 
-          # Randomly select a GIF
-          random_index=$(shuf -i 0-$((${#gif_list[@]}-1)) -n 1)
-          image_url=${gif_list[$random_index]}
+#           # Randomly select a GIF
+#           random_index=$(shuf -i 0-$((${#gif_list[@]}-1)) -n 1)
+#           image_url=${gif_list[$random_index]}
 
-          echo "Debug: Selected GIF URL is $image_url"  # Debug
+#           echo "Debug: Selected GIF URL is $image_url"  # Debug
 
-          # Replace the image in README.md
-          sed -i "s|!\[0\](.*)|![0]($image_url)|g" README.md
+#           # Replace the image in README.md
+#           sed -i "s|!\[0\](.*)|![0]($image_url)|g" README.md
 
-      - name: Debug Info
-        run: |
-          echo "Current Hour: $current_hour"
-          echo "Image URL: $image_url"
+#       - name: Debug Info
+#         run: |
+#           echo "Current Hour: $current_hour"
+#           echo "Image URL: $image_url"
 
-      - name: Commit and Push Changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Action"
+#       - name: Commit and Push Changes
+#         run: |
+#           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+#           git config --local user.name "GitHub Action"
           
-          # Kiểm tra nếu có sự thay đổi
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add README.md
-            git commit -m "Update image based on time of day"
-            git push
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           # Kiểm tra nếu có sự thay đổi
+#           if git diff --quiet; then
+#             echo "No changes to commit"
+#           else
+#             git add README.md
+#             git commit -m "Update image based on time of day"
+#             git push
+#           fi
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
