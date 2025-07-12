@@ -6,7 +6,4 @@
 - 🖥️ Currently working as a Data Engineer at a software company.
 - 🚀 Quick learner with a keen interest in data science and engineering.
 - 📊 Focused on enhancing my skills and knowledge in data.
-- 🎯 Personal goals:
-  - Achieve an English proficiency score of over 450 in TOEIC.
-  - Maintain a GPA above 3.3
 
